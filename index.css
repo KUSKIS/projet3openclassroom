@@ -1,0 +1,300 @@
+/*--------le body-----------*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden!important;
+}
+body{
+    background-color: #546c78;
+}
+
+/*-------------le slider----------------*/
+
+li{
+  list-style: none;
+}
+#slider{
+    position: relative;
+}
+.item1, .item2, .item3, .item4{
+   position: relative;
+   z-index: 2;
+}
+.maxitem{
+   box-shadow: 10px 5px 5px #37474F;
+   width: 980px;
+   height: 90vh;
+   margin-left: -2%;
+    -webkit-filter: grayscale(40%);
+	filter: grayscale(40%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.text1, .text2, .text3, .text4{
+    top: 20%;
+    left: -2%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+	width: 100%;
+    box-shadow: 10px 5px 5px#37474F;
+}
+.screenshot1{
+    position: absolute;
+    left: 80%;
+    top: 6%;
+    width: 15%;
+}
+.screenshot2{
+    position: absolute;
+    left: 75%;
+    top: 6%;
+    width: 20%;
+}
+.screenshot3{
+    position: absolute;
+    left: 75%;
+    top: 6%;
+    width: 20%;
+}
+.screenshot4{
+    position: absolute;
+    left: 45%;
+    top: 6%;
+    width: 50%;
+}
+#slider h2{
+	text-align: left;
+    padding-top: 5%;
+    padding-left: 5%;
+    color: whitesmoke;
+    text-decoration: underline;
+}
+#slider p{
+    font-size: 2em;
+    color: whitesmoke;
+    text-align: left;
+    padding-left: 5%;
+}
+#slider i{
+    position: absolute;
+    color:  whitesmoke;
+}
+.fa-pause-circle, .fa-play-circle{
+    top: 100%;
+    left: 47%;
+}
+.fa-backward{
+    top: 100%;
+    left: 40%;
+}
+.fa-forward{
+    top: 100%;
+    right: 43%;
+}
+
+/*------------la map---------------*/
+
+.map-container{
+    height: 280px;
+    position: relative;
+    margin-top: 5%;
+    -webkit-filter: grayscale(40%);
+	filter: grayscale(40%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.map-container #map{
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    box-shadow: 10px 5px 5px#37474F;
+}
+.unavailablebike, .underconstructionstation{
+    display: none;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: #37474F;
+    width: 80%;
+    font-size: 2em;
+    position: absolute;
+    top: 120%;
+    left: 60%;
+}
+
+/*--------le formulaire--------*/
+
+h1, #infostation li, h3{
+    color: whitesmoke;
+}
+#infostation{
+    background-color: #7893a1;
+    box-shadow: 10px 5px 5px#37474F;
+}
+#form{
+    margin-top: 5%;
+}
+#infostation ul{
+    padding-left: 0%;
+}
+.active{
+    color: whitesmoke!important;
+    background-color: #546c78!important;
+}
+input[type=text]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]){
+    border: 1px solid  #37474F!important;
+    box-shadow: 1px 1px 1px 1px  #37474F!important;
+}
+input#lastname.form-control, input#firstname.form-control{
+    color: black;
+}
+.errorcapture{
+    display: none;
+    color:  whitesmoke;
+}
+#booking.btn.btn-info{
+    background-color: #37474F!important;
+    color: whitesmoke;
+    width: 50%;
+    font-size: large;
+    box-shadow: 0 0 10px whitesmoke;
+}
+
+/*--------le canvas--------*/
+
+.row{
+    position: relative;
+}
+#canvascontainer{
+    display: none;
+    margin-left: 50%;
+    position: absolute;
+}
+#drawing{
+    border: 1px solid #37474F;
+    background-color:  whitesmoke;
+}
+#validbutton, #deletedbutton{
+    background-color: #37474F!important;
+    border: 5px solid #37474F;
+    color:  whitesmoke;
+    box-shadow: 0 0 10px whitesmoke;
+}
+#validbutton{
+    margin-left: 25%;
+}
+#infocanva{
+    background-color: #37474F!important;
+    color:  whitesmoke;
+    width: 100%;
+    text-align: center;
+    box-sizing: content-box!important;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+}
+
+/*---------timer-----------*/
+
+#infobooking{
+    display: none;
+    width: 100%;
+    margin-top: 10%;
+}
+#infobooking p{
+    text-align: center;
+    background-color:  #37474F;
+    color:  whitesmoke;
+    font-weight: bold;
+    font-size: 2em;
+}
+#cancelbutton{
+    background-color: #37474F!important;
+    border: 5px solid #37474F;
+    box-shadow: 0 0 10px whitesmoke;
+    color:  whitesmoke;
+    position: relative;
+    left: 43.3%;
+}
+#timer{
+    font-size: 4em;
+    font-weight: bold;
+    color: #cc0000;
+    text-align: center!important;
+    margin-left: 3%;
+}
+
+/*-----------arrow------------*/
+
+#arrow_scroll, #arrow_scroll a:hover, #arrow_scroll a{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #37474F;
+    background-color:#37474F;
+    color:  whitesmoke;
+    opacity: 0.7;
+}
+
+/*-----------responsive------------*/
+
+@media screen and (max-width: 425px){
+
+    .maxitem{
+        max-width: 100%;
+        height: 30%;
+        position: relative;
+        left: -7%;
+    }
+    .text1, .text2, .text3, .text4{
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: -8%;
+    }
+    figcaption img{
+        display: none;
+    }
+    .fa-pause-circle, .fa-play-circle{
+        top: 100%;
+        left: 45%;
+    }
+    .fa-backward{
+        top: 100%;
+        left: 28%;
+    }
+    .fa-forward{
+        top: 100%;
+        right: 30%;
+    }
+    #canvascontainer{
+        margin: auto;
+        position: relative;
+    }
+    #canvasbuttons{
+        margin-left: -30%;
+    }
+    #cancelbutton{
+        left: 1%;
+    }
+    .unavailablebike, .underconstructionstation{
+        position: relative;
+        left: 0;
+        background-color: #37474F;
+        width: 100%;
+    }
+    #infobooking p{
+        font-weight: lighter;
+        width: 80%;
+        margin-left: 10%;
+    }
+    #slider h2{
+        padding-top: 0%;
+    }
+    #slider p{
+        font-size: 1.7em;
+    }
+
+}

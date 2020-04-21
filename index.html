@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>PROJET 3</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+    <!--Leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="">
+    <!--CSS-->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark special-color" id="navigation">
+
+    <a class="navbar-brand" href="#">NANTES CITY BIKE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#item1"><i class="fas fa-bicycle"></i>Accueil<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#booking">Réservation</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+
+  <div class="container my-5 py-5 z-depth-1">
+
+    <section id="picture" class="px-md-1 mx-md-1 text-center text-lg-left dark-grey-text">
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="col-lg-10 text-center">
+          <h1 class="font-weight-bold mb-4">Bienvenue à Nantes City Bike</h1>
+          <div class="view overlay z-depth-1-half"></div>
+        </div>
+
+        <!--------le slider-------->
+        <div id="slider">
+          <i class="far fa-2x fa-pause-circle"></i>
+          <i class="fas fa-2x fa-backward"></i>
+          <i class="fas fa-2x fa-forward"></i>
+          <ul>
+            <li>
+              <figure class="item1">
+                <img class="maxitem" src="images/bicycles-4245347_1280.jpg"
+                alt="velo Station">
+                <figcaption class="text1">
+                  <h2>ETAPE N°1</h2>
+                  <p>Choisissez une station sur la carte</p>
+                  <img class="screenshot1" src="images/mini1.png" alt="capture d'écran étape1">
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="item2">
+                <img class="maxitem" src="images/business-3385079_1280.jpg"
+                alt="velo Station">
+                <figcaption class="text2">
+                  <h2>ETAPE N°2</h2>
+                  <p>Remplissez le formulaire puis réservez</p>
+                  <img class="screenshot2" src="images/mini2.png" alt="capture d'écran étape2">
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="item3">
+                <img class="maxitem" src="images/cycle-path-3444914_1280.jpg"
+                alt="velo Station">
+                <figcaption class="text3">
+                  <h2>ETAPE N°3</h2>
+                  <p>Signez et validez votre réservation</p>
+                  <img class="screenshot3" src="images/mini3.png" alt="capture d'écran étape3">
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="item4">
+                <img class="maxitem" src="images/watch-1208200_1280.jpg" alt="montre">
+                <figcaption class="text4">
+                  <h2>ETAPE N°4</h2>
+                  <p>Félicitation !<br> Votre réservation est prête <br> pendant 20 minutes</p>
+                  <img class="screenshot4" src="images/mini4.png" alt="capture d'écran étape4">
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <section id="customer" class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-6 text-center">
+        <!----------le choix de la station--------->
+        <div id='infostation'>
+          <h3 class="font-weight-bold">CHOIX DE LA STATION :</h3>
+          <div class="unavailablebike">Plus de vélo disponible dans cette station <br> Veuillez essayer ultérieurement</div>
+          <div class="underconstructionstation">Station indisponible</div>
+            <ul>
+              <li>Nom de la station :<br><b><span id="namestation"></span></b></li>
+              <li>Adresse de la station :<br><b><span id="adressofstation"></span></b></li>
+              <li>Etat :<br><b><span id="statusofstation"></span></b></li>
+              <li>Nombre de stationnements :<br><b><span id="numberplace"></span></b></li>
+              <li>Vélo(s) disponible(s) :<br><b><span id="availablebikes"></span></b></li>
+            </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-5 col-md-12 mb-0 mb-md-0">
+        <!----------la map------------>
+        <div id="map-container-google-1" class="z-depth-1 map-container mb-4">
+          <div id="map"></div>
+        </div>
+
+      </div>
+      <!----------le formulaire------------>
+      <div id="form" class="col-lg-7 col-md-12 mb-4 mb-md-0">
+
+        <div class="md-form md-outline mt-3">
+          <input type="text" id="lastname" class="form-control" value="">
+          <label for="lastname">Votre nom</label>
+          <span class="errorcapture"><i class="fas fa-times"></i> Veuillez saisir votre nom</span>
+        </div>
+        <div class="md-form md-outline">
+          <input type="text" id="firstname" class="form-control" value="">
+            <label for="firstname">Votre prénom</label>
+            <span class="errorcapture"><i class="fas fa-times"></i> Veuillez saisir votre prénom</span>
+        </div>
+
+        <button type="submit" id="booking" value ="booking" class="btn btn-info btn-sm ml-0">Réservez<i class="far fas fa-bicycle ml-2"></i></button>
+
+      </div>
+        <!-----------le canvas----------->
+      <div id="canvascontainer">
+        <canvas id="drawing" width= '300' height='250'></canvas>
+        <div id="canvasbuttons">
+          <button id="validbutton">Validez</button>
+          <button id="deletedbutton">Effacez</button>
+        </div>
+        <p id="infocanva">SIGNEZ DANS LE CADRE BLANC</p>
+      </div>
+        <!-----------la réservation------------>
+      <div id="infobooking">
+        <p id="bookingstationname">Un vélo vous attend à la station : <br> Votre réservation expirera dans :</p>
+        <button id="cancelbutton">Annuler la réservation</button>
+        <div id="timer"></div>
+      </div>
+
+    </div>
+
+      <div id="arrow_scroll">
+        <a href ="#navigation" class="scroll-to-href"><i class="fa fa-2x fa-arrow-up"></i></a>
+      </div>
+
+  </section>
+
+
+
+  <footer class="page-footer font-small black">
+
+    <div class="footer-copyright text-center py-3">Projet réalisé par Sabine Maillet dans le cadre de la formation de DWJ OpenClassrooms - © 2019 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+
+  </footer>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+<!--Leaflet-->
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+crossorigin=""></script>
+<script type="text/javascript" src="slider.js"></script>
+<script type="text/javascript" src="booking.js"></script>
+<script type="text/javascript" src="stationmap.js"></script>
+<script type="text/javascript" src="canvas.js"></script>
+<script type="text/javascript" src="timer.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+
+</html>
